@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="bin\Debug\net6.0\appsettings.json" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.13" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <Folder Include="bin\Debug\net6.0\" />
   </ItemGroup>
 
 </Project>

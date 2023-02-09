@@ -2,9 +2,9 @@
 {
     public class Events
     {
-        public string type { get; set; }
-        public DateTime datetime_local { get; set; }
-        public Venue venue { get; set; }
-        public string url { get; set; }
+        public string Type { get; set; }
+        public DateTime Datetime_local { get; set; }
+        public Venue Venue { get; set; }
+        public string Url { get; set; }
     }
 }

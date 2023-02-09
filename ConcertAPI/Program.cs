@@ -7,12 +7,7 @@ namespace ConcertAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
-
-            builder.Services.AddHttpClient<EventsByArtistRepository>(client =>
-            {
-                client.BaseAddress = new Uri("https://api.seatgeek.com/2/events");
-            });
+            builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
             builder.Services.AddTransient<IEventsByArtistRepository, EventsByArtistRepository>();
 

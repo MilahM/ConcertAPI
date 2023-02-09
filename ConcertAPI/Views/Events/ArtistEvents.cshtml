@@ -9,19 +9,19 @@
 <table class="table">
     <tr>
         <th>Type</th>
-        <th>Date/Time</th>
+        <th>Date_local</th>
         <th>Venue</th>
         <th>Link</th>
     </tr>
 
-    @foreach (var item in @events)
+    @foreach (var item in @Model)
     {
         <tr>
             <td><a href=/Events/ArtistEvents/@item.Type>@item.Type</a></td>
             <td>@item.Type</td>
-            <td>@item.Date/Time</td>
+            <td>@item.Datetime_local/Time</td>
             <td>@item.Venue</td>
-            <td>@item.Link</td>
+            <td>@item.Url</td>
         </tr>
     }
 

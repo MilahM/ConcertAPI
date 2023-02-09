@@ -1,0 +1,11 @@
+﻿@using ConcertAPI.Models.Event_Models;
+@model Root
+
+@foreach(var item in Model.events)
+{
+    <h1>Item ID: @item.id</h1>
+    <h1>Venue: @item.venue.city</h1>
+    <h1>Description: @item.description</h1>
+    <hr />
+    <br />
+}
