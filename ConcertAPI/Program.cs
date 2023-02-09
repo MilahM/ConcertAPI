@@ -9,6 +9,13 @@ namespace ConcertAPI
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddHttpClient<EventsByArtistRepository>(client =>
+            {
+                client.BaseAddress = new Uri("https://api.seatgeek.com/2/events");
+            });
+
+            builder.Services.AddTransient<IEventsByArtistRepository, EventsByArtistRepository>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
