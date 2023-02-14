@@ -1,6 +1,7 @@
 ﻿using ConcertAPI.Models;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using ConcertAPI.Models.Event_Models;
 
 namespace ConcertAPI
 {
@@ -32,14 +33,6 @@ namespace ConcertAPI
             var artistEvents = JObject.Parse(artistUrlResponse)["events"].ToString();
 
             List<Events> events = JsonConvert.DeserializeObject<List<Events>>(artistEvents);
-
-            //foreach (var item in events)
-            //{
-            //    Console.WriteLine(item.venue.name);
-            //    Console.WriteLine(item.url);
-            //    Console.WriteLine(item.datetime_local);
-            //    Console.WriteLine();
-            //}
 
             return events;
         }

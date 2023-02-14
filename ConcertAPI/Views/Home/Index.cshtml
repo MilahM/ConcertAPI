@@ -1,34 +1,28 @@
 ﻿
-<h1>Concert-Go</h1>
+<div style="color: white">
+    <h1>Welcome to Concert-Go</h1>
+    <h2>Here you can find tickets to see your favorite Artists!</h2>
+</div>
+
+<style>
+    button{
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        height: 36px;
+        width: 150px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    body{
+        text-align: center;
+    }
+</style>
 
 
-@*@model IEnumerable<Events>
+<a asp-controller="Artist" asp-action="ArtistEvents">
+    <input type="button" class="btn btn-primary" value="Search By Performer" /></a>
 
-@{
-    ViewData["Title"] = "All Events";
-}
-
-<h2>All Events</h2>
-
-<table class="table table-sm table-striped table-bordered m-2">
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Datetime_loval</th>
-            <th>Venue</th>
-            <th>Url</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var e in Model)
-        {
-            <tr>
-                <td>@e.Type</td>
-                <td>@e.Datetime_local</td>
-                <td>@e.Venue</td>
-                <td>@e.Url</td>
-                <td>
-            </tr>
-        }
-    </tbody>
-</table>*@
+<a asp-controller="Venue" asp-action="VenueEvents">
+    <input type="button" class="btn btn-primary" value="Search By Venue" /></a>

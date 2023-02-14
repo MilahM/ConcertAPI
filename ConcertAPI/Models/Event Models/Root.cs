@@ -2,7 +2,7 @@
 {
     public class Root
     {
-        public List<Event> events { get; set; }
+        public List<Events> events { get; set; }
         public Meta meta { get; set; }
     }
 

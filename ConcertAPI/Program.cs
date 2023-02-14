@@ -11,6 +11,8 @@ namespace ConcertAPI
 
             builder.Services.AddTransient<IEventsByArtistRepository, EventsByArtistRepository>();
 
+            builder.Services.AddTransient<IEventsByVenueRepository, EventsByVenueRepository>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

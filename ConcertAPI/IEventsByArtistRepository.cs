@@ -1,4 +1,5 @@
 ﻿using ConcertAPI.Models;
+using ConcertAPI.Models.Event_Models;
 
 namespace ConcertAPI
 {

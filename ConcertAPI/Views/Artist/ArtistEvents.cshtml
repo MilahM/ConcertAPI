@@ -1,11 +1,37 @@
 ﻿@using ConcertAPI.Models.Event_Models;
-@model Root
+@model Performer
 
+<h1>Events</h1>
+
+<div style="display: block">
+    <h2>Here are all Events for this Performer(s).</h2>
+</div>
+
+<form method="get">
+    <div class="input group">
+        <input class="form-control" asp-for="Name"/>
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+<table class="table text-light">
+     <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Url</th>
+    </tr>
 @foreach(var item in Model.events)
-{
-    <h1>Item ID: @item.id</h1>
-    <h1>Venue: @item.venue.city</h1>
-    <h1>Description: @item.description</h1>
-    <hr />
-    <br />
-}
+    {
+        <tr>
+            <td>@item.Type.ToUpper()</td>
+            <td>@item.Name</td>
+            <td>@item.Location</td>
+            <td><a href=/Artist/ArtistEvents/@item.Url>@item.Url</a></td>
+        </tr>
+    }
+</table>
+
+
