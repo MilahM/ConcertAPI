@@ -17,9 +17,3 @@ body {
     margin-bottom: 60px;
 }
 
-.background-image {
-    background-image: url('c:\users\kamil\onedrive\desktop\repos\concertapi\concertapi\image\background.jpg');
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
-}

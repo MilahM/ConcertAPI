@@ -4,7 +4,7 @@
 <h1>Events</h1>
 
 <div style="display: block">
-    <h2>Here are all Events for this Performer(s).</h2>
+    <h2>Search your favorite Artist(s) to see their upcoming events.</h2>
 </div>
 
 @using (Html.BeginForm("Search", "Artist", FormMethod.Get))
@@ -16,7 +16,7 @@
 }
 <br />
 
-<table class="table text-light" border="1">
+@*<table class="table text-light" border="1">
      <tr>
         <th>Type</th>
         <th>Venue</th>
@@ -32,6 +32,6 @@
             <td><a href=/Artist/ArtistEvents/@item.Url>@item.Url</a></td>
         </tr>
     }
-</table>
+</table>*@
 
 
