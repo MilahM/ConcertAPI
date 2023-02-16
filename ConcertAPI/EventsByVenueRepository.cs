@@ -16,15 +16,18 @@ namespace ConcertAPI
         {
             _client = client;
         }
-        public List<Events> GetEventByVenue(string apiCall)
+
+        public IEnumerable<Event> SearchEvents(string searchTerm)
         {
-            var client = new HttpClient();
+            string auth = File.ReadAllText("appsettings.json");
 
-            var artistUrlResponse = client.GetStringAsync(apiCall).Result;
+            string authKey = JObject.Parse(auth).GetValue("client_id").ToString();
 
-            var artistEvents = JObject.Parse(artistUrlResponse)["events"].ToString();
+            string apiCall = $"https://api.seatgeek.com/2/events?venue.city={searchTerm}&client_id={authKey}";
 
-            List<Events> events = JsonConvert.DeserializeObject<List<Events>>(artistEvents);
+            var response = _client.GetStringAsync(apiCall).Result;
+
+            IEnumerable<Event> events = JsonConvert.DeserializeObject<Event>(response).Events;
 
             return events;
         }

@@ -9,6 +9,12 @@ namespace ConcertAPI
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
+            builder.Services.AddScoped<HttpClient>((s) =>
+            {
+                var client = new HttpClient();
+                return client;
+            });
+
             builder.Services.AddTransient<IEventsByArtistRepository, EventsByArtistRepository>();
 
             builder.Services.AddTransient<IEventsByVenueRepository, EventsByVenueRepository>();

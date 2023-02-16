@@ -2,7 +2,8 @@
 {
     public class Root
     {
-        public List<Events> events { get; set; }
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        public List<Event> events { get; set; }
         public Meta meta { get; set; }
     }
 

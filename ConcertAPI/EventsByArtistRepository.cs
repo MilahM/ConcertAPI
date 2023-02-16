@@ -2,20 +2,15 @@
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using ConcertAPI.Models.Event_Models;
+using System;
 
 namespace ConcertAPI
 {
     public class EventsByArtistRepository : IEventsByArtistRepository
     {
+        //public List<Event> eventsList = new List<Event> { };
         public EventsByArtistRepository()
         {
-            //string auth = File.ReadAllText("appsettings.json");
-
-            //string authKey = JObject.Parse(auth).GetValue("client_id").ToString();
-
-            //var artistName = Console.ReadLine();
-
-            //string apiCall = $"https://api.seatgeek.com/2/events?performers.slug={artistName}&client_id={authKey}";
         }
         private readonly HttpClient _client;
 
@@ -24,18 +19,24 @@ namespace ConcertAPI
             _client = client;
         }
 
-        public List<Events> GetEventByArtist(string apiCall)
+        public IEnumerable<Event> SearchEvents(string searchTerm)
         {
-            var client = new HttpClient();
+            //Jeremy's try
+            string auth = File.ReadAllText("appsettings.json");
 
-            var artistUrlResponse = client.GetStringAsync(apiCall).Result;
+            string authKey = JObject.Parse(auth).GetValue("client_id").ToString();
 
-            var artistEvents = JObject.Parse(artistUrlResponse)["events"].ToString();
+            string apiCall = $"https://api.seatgeek.com/2/events?performers.slug={searchTerm}&client_id={authKey}";
 
-            List<Events> events = JsonConvert.DeserializeObject<List<Events>>(artistEvents);
+            var response = _client.GetStringAsync(apiCall).Result;
+
+            IEnumerable<Event> events = JsonConvert.DeserializeObject<Event>(response).Events;
 
             return events;
+
         }
+
     }
 }
+
 

@@ -4,26 +4,25 @@
 <h1>Events</h1>
 
 <div style="display: block">
-    <h2>Here are upcoming events at this Venue.</h2>
+    <h2>Here are upcoming events in this City.</h2>
 </div>
 
-<table class="table text-light">
+@using (Html.BeginForm("Search", "Venue", FormMethod.Get))
+{
+    <p>
+        Search for Artist: @Html.TextBox("searchTerm")
+        <input type="submit" value="Search" />
+    </p>
+}
+<br />
+
+<table class="table text-light" border="1">
     <tr>
-        <th>City</th>
-        <th>State</th>
-        <th>Country</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Url</th>
+        <th>Link</th>
     </tr>
 @foreach (var item in @Model.events)
     {
         <tr>
-            <td>@item.City</td>
-            <td>@item.State</td>
-            <td>@item.Country</td>
-            <td>@item.Name</td>
-            <td>@item.Location</td>
             <td><a href=/Venue/VenueEvents/@item.Url>@item.Url</a></td>
         </tr>
     }

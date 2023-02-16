@@ -2,6 +2,7 @@
 using ConcertAPI.Models.Event_Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 
 namespace ConcertAPI.Controllers
 {
@@ -26,13 +27,19 @@ namespace ConcertAPI.Controllers
             var client = new HttpClient();
             var clientId = _configuration.GetSection("client_id").Value;
             var clientSecret = _configuration.GetSection("client_secret").Value;
-            var artistName = "beyonce";
+            var artistName = "";
             string url = $"https://api.seatgeek.com/2/events?performers.slug={artistName}&client_id={clientId}";
             var response = client.GetStringAsync(url).Result;
 
-            var performer = JsonConvert.DeserializeObject<Performer>(response);
-            return View(performer);
-        }
+            var events = JsonConvert.DeserializeObject<Event>(response);
+            return View(events);
 
+        }
+        public IActionResult Search(string searchTerm)
+        {
+            var searchResults = repo.SearchEvents(searchTerm);
+            return View(searchResults);
+
+        }
     }
 }

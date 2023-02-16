@@ -1,13 +1,19 @@
 ﻿@using ConcertAPI.Models.Event_Models;
-@model Event
+@model IEnumerable<Event>
 
 <h1>Events</h1>
 
 <div style="display: block">
-    <h2>Here are all Events for this Performer(s).</h2>
+    <h2>Here are all the Events based on your search.</h2>
 </div>
 
-@using (Html.BeginForm("Search", "Artist", FormMethod.Get))
+@{
+    ViewData["Title"] = "VenueEvents";
+}
+
+<h1>Search</h1>
+
+@using (Html.BeginForm("Search", "Venue", FormMethod.Get))
 {
     <p>
         Search for Artist: @Html.TextBox("searchTerm")
@@ -17,13 +23,13 @@
 <br />
 
 <table class="table text-light" border="1">
-     <tr>
+    <tr>
         <th>Type</th>
         <th>Venue</th>
         <th>Date/Time</th>
         <th>Url</th>
     </tr>
-@foreach(var item in Model.Events)
+    @foreach (var item in Model)
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.Type)</td>
@@ -33,5 +39,3 @@
         </tr>
     }
 </table>
-
-

@@ -5,6 +5,6 @@ namespace ConcertAPI
 {
     public interface IEventsByVenueRepository
     {
-        public List<Events> GetEventByVenue(string apiCall);
+        public IEnumerable<Event> SearchEvents(string searchTerm);
     }
 }

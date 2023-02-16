@@ -31,5 +31,12 @@ namespace ConcertAPI.Controllers
             var venues = JsonConvert.DeserializeObject<Venue>(response);
             return View(venues);
         }
+
+        public IActionResult Search(string searchTerm)
+        {
+            var searchResults = repo.SearchEvents(searchTerm);
+            return View(searchResults);
+
+        }
     }
 }
