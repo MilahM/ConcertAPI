@@ -11,7 +11,7 @@ html {
 html {
     position: relative;
     min-height: 100%;
-    background-image: url("C:\Users\kamil\OneDrive\Desktop\repos\ConcertAPI\ConcertAPI\image\background.png");
+    background-image: url("../img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -20,6 +20,11 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 
