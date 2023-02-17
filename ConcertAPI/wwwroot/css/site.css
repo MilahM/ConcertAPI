@@ -3,20 +3,23 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    background-image: url("C:\Users\kamil\OneDrive\Desktop\repos\ConcertAPI\ConcertAPI\image\background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 body {
     margin-bottom: 60px;
-    background-color: black;
-    background-image: url("../image/background.jpg");
-    background-repeat: no-repeat;
 }
+
 
