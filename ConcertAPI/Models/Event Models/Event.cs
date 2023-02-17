@@ -24,11 +24,6 @@ namespace ConcertAPI.Models.Event_Models
         public string name { get; set; }
         public static List<Event> SearchList { get; set; } = new List<Event>();
 
-        //public string ReplaceSpace(string searchTerm)
-        //{
-        //    return searchTerm.Replace(" ", "%20");
-        //}
-
         public string ReplaceSpace(string searchTerm)
         {
             return searchTerm.Replace(" ", "-");

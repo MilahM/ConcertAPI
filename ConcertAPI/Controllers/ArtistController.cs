@@ -21,12 +21,6 @@ namespace ConcertAPI.Controllers
         {
             return View();
         }
-        //public IActionResult Search(string searchTerm)
-        //{
-        //    var searchResults = repo.SearchEvents(searchTerm);
-        //    return View(searchResults);
-
-        //}
 
         public IActionResult ArtistEvents()
         {

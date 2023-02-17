@@ -13,25 +13,10 @@ namespace ConcertAPI.Controllers
         {
             _logger = logger;
         }
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            //List<Events> eventsList = new List<Events>();
-            //using(var httpClient = new HttpClient())
-            //{
-            //    using (var response = await httpClient.GetAsync("http://localhost:7232/api/Events"))
-            //    {
-            //        string apiResponse = await response.Content.ReadAsStringAsync();
-            //        eventsList = JsonConvert.DeserializeObject<List<Events>>(apiResponse);
-            //    }
-            //}
             return View();
         }
-
-
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
 
         public IActionResult Privacy()
         {

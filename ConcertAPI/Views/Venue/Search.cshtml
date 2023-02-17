@@ -4,7 +4,7 @@
 <h1>Events</h1>
 
 <div style="display: block">
-    <h2>Here are all the Events based on your search.</h2>
+    <h2>Here are all the Events in this City based on your search.</h2>
 </div>
 
 @{
@@ -16,7 +16,7 @@
 @using (Html.BeginForm("Search", "Venue", FormMethod.Get))
 {
     <p>
-        Search for Artist: @Html.TextBox("searchTerm")
+        Search for Venue: @Html.TextBox("searchTerm")
         <input type="submit" value="Search" />
     </p>
 }
