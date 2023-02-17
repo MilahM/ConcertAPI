@@ -1,5 +1,5 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -15,5 +15,8 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-color: black;
+    background-image: url("../image/background.jpg");
+    background-repeat: no-repeat;
 }
 

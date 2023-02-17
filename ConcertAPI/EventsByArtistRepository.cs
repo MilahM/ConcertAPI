@@ -8,7 +8,6 @@ namespace ConcertAPI
 {
     public class EventsByArtistRepository : IEventsByArtistRepository
     {
-        //public List<Event> eventsList = new List<Event> { };
         public EventsByArtistRepository()
         {
         }
@@ -21,10 +20,13 @@ namespace ConcertAPI
 
         public IEnumerable<Event> SearchEvents(string searchTerm)
         {
-            //Jeremy's try
             string auth = File.ReadAllText("appsettings.json");
 
             string authKey = JObject.Parse(auth).GetValue("client_id").ToString();
+
+            //var newEvent = new Event();
+
+            //var artistName = newEvent.ReplaceSpace(searchTerm);
 
             string apiCall = $"https://api.seatgeek.com/2/events?performers.slug={searchTerm}&client_id={authKey}";
 
