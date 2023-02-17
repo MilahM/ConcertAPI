@@ -24,9 +24,9 @@ namespace ConcertAPI
 
             string authKey = JObject.Parse(auth).GetValue("client_id").ToString();
 
-            //var newEvent = new Event();
+            var newEvent = new Event();
 
-            //var artistName = newEvent.ReplaceSpace(searchTerm);
+            var artistName = newEvent.ReplaceSpace(searchTerm);
 
             string apiCall = $"https://api.seatgeek.com/2/events?performers.slug={searchTerm}&client_id={authKey}";
 

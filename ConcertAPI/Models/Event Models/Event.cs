@@ -31,7 +31,7 @@ namespace ConcertAPI.Models.Event_Models
 
         public string ReplaceSpace(string searchTerm)
         {
-            return searchTerm.Replace(" ", "%20");
+            return searchTerm.Replace(" ", "-");
         }
     }
 
